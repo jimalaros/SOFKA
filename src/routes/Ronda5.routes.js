@@ -1,10 +1,12 @@
-/import { Router } from 'express';
-import * as QuintaRonda from '../controllers/Ronda2.controller';
+import { Router } from 'express';
+import * as QuintaRonda from '../controllers/Ronda5.controller';
 const router = Router();
 
 router.get('/', QuintaRonda.Preguntas);
 
-router.post('/CrearPregunta', QuintaRonda.PreguntasRonda2);
+router.get('/DineroRonda2', QuintaRonda.DineroRonda4);
+
+router.post('/CrearPregunta', QuintaRonda.PreguntasRonda5);
 
 router.post('/PrimeraRespuesta/:id', QuintaRonda.ResponderPregunta1);
 

@@ -582,6 +582,34 @@ export const swaggerOptions = {
               }
             }
           },
+          "/primeraronda/AgregarDinero": {
+            "post": {
+              "tags": [
+                "PrimeraRonda"
+              ],
+              "summary": "Para guardar el dinero conseguido en la primera ronda",
+              "responses": {
+                "201": {
+                  "description": "Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "msg": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized",
+                }
+              }
+            }
+          },
           "/segundaronda": {
             "get": {
               "tags": [
@@ -595,6 +623,26 @@ export const swaggerOptions = {
                     "application/json": {
                       "schema": {
                         "$ref": "#/components/schemas/Pregunta"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/segundaronda/DineroRonda1": {
+            "get": {
+              "tags": [
+                "SegundaRonda"
+              ],
+              "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "responses": {
+                "200": {
+                  "description": "Ok",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Dinero"
                       }
                     }
                   }
@@ -969,6 +1017,34 @@ export const swaggerOptions = {
               }
             }
           },
+          "/segundaronda/AgregarDinero": {
+            "post": {
+              "tags": [
+                "SegundaRonda"
+              ],
+              "summary": "Para guardar el dinero conseguido en la segunda ronda",
+              "responses": {
+                "201": {
+                  "description": "Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "msg": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized",
+                }
+              }
+            }
+          },
           "/tercerronda": {
             "get": {
               "tags": [
@@ -982,6 +1058,26 @@ export const swaggerOptions = {
                     "application/json": {
                       "schema": {
                         "$ref": "#/components/schemas/Pregunta"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/tercerronda/DineroRonda2": {
+            "get": {
+              "tags": [
+                "TercerRonda"
+              ],
+              "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "responses": {
+                "200": {
+                  "description": "Ok",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Dinero"
                       }
                     }
                   }
@@ -1356,6 +1452,34 @@ export const swaggerOptions = {
               }
             }
           },
+          "/tercerronda/AgregarDinero": {
+            "post": {
+              "tags": [
+                "TercerRonda"
+              ],
+              "summary": "Para guardar el dinero conseguido en la segunda ronda",
+              "responses": {
+                "201": {
+                  "description": "Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "msg": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized",
+                }
+              }
+            }
+          },
           "/cuartaronda": {
             "get": {
               "tags": [
@@ -1369,6 +1493,26 @@ export const swaggerOptions = {
                     "application/json": {
                       "schema": {
                         "$ref": "#/components/schemas/Pregunta"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/cuartaronda/DineroRonda3": {
+            "get": {
+              "tags": [
+                "CuartaRonda"
+              ],
+              "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "responses": {
+                "200": {
+                  "description": "Ok",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Dinero"
                       }
                     }
                   }
@@ -1743,6 +1887,34 @@ export const swaggerOptions = {
               }
             }
           },
+          "/cuartaronda/AgregarDinero": {
+            "post": {
+              "tags": [
+                "CuartaRonda"
+              ],
+              "summary": "Para guardar el dinero conseguido en la segunda ronda",
+              "responses": {
+                "201": {
+                  "description": "Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "msg": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized",
+                }
+              }
+            }
+          },
           "/quintaronda": {
             "get": {
               "tags": [
@@ -1756,6 +1928,26 @@ export const swaggerOptions = {
                     "application/json": {
                       "schema": {
                         "$ref": "#/components/schemas/Pregunta"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "/quintaronda/DineroRonda1": {
+            "get": {
+              "tags": [
+                "QuintaRonda"
+              ],
+              "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "responses": {
+                "200": {
+                  "description": "Ok",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Dinero"
                       }
                     }
                   }
@@ -2244,6 +2436,18 @@ export const swaggerOptions = {
                 "respuesta": {
                   "type": "string",
                   "example": "Whatsapp"
+                },
+              },
+            },
+            "Dinero": {
+              "type": "object",
+              "required": [
+                "acumulado"
+              ],
+              "properties": {
+                "respuesta": {
+                  "type": "number",
+                  "example": 250000
                 },
               },
             },

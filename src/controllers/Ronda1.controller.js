@@ -1,17 +1,19 @@
 import Pregunta from '../models/preguntas';
+import Dinero from '../models/Dinero.model';
 
-let primerpremio=0;
-let segundopremio=0;
-let tercerpremio=0;
-let cuartopremio=0;
-let quintopremio=0;
+let acumulado = 0;
 let premiototal=[];
 
 export const Preguntas = async (req, res) => {
     try {
+        let questions = [];
         const preguntas = await Pregunta.find();
-        if(preguntas) { res.json(preguntas) }
-        else {res.status(400).json({msg: 'Faltan Datos'})}
+        for (let index = 0; index < preguntas.length; index++) {
+            const elementos = preguntas[index].categoria;
+            if (elementos === 1) { 
+                questions.push(preguntas[index]);
+            } 
+        } res.json(questions);
     } catch (error) { res.status(404).json(error); }
 };
 
@@ -47,8 +49,8 @@ export const ResponderPregunta2 = async (req, res) => {
     if (opción === Preguntas.respuesta2) {
         let segundopremio = Preguntas.premio;
         premiototal.push(segundopremio);
-        let premio = premiototal[0] + segundopremio;
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premio}`});
+        acumulado = premiototal[0] + segundopremio;
+        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${acumulado}`});
     }
     else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[0]}`}); }
 };
@@ -59,8 +61,8 @@ export const ResponderPregunta3 = async (req, res) => {
     if (opción === Preguntas.respuesta3) {
         let tercerpremio = Preguntas.premio;
         premiototal.push(tercerpremio);
-        let premio = premiototal[0] + premiototal[1] + tercerpremio;
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premio}`});
+        acumulado = premiototal[0] + premiototal[1] + tercerpremio;
+        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${acumulado}`});
     }
     else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[1]}`}); }
 };
@@ -71,8 +73,8 @@ export const ResponderPregunta4 = async (req, res) => {
     if (opción === Preguntas.respuesta4) {
         let cuartopremio = Preguntas.premio;
         premiototal.push(cuartopremio);
-        let premio = premiototal[0] + premiototal[1] + premiototal[2] + cuartopremio;
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premio}`});
+        acumulado = premiototal[0] + premiototal[1] + premiototal[2] + cuartopremio;
+        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${acumulado}`});
     }
     else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[2]}`}); }
 };
@@ -82,8 +84,18 @@ export const ResponderPregunta5 = async (req, res) => {
     const opción = req.body.respuesta;
     if (opción === Preguntas.respuesta1) {
         let quintopremio = Preguntas.premio;
-        let premio = premiototal[0] + premiototal[1] + premiototal[2] + premiototal[3] + quintopremio;
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premio}`});
+        premiototal.push(quintopremio);
+        acumulado = premiototal[0] + premiototal[1] + premiototal[2] + premiototal[3] + quintopremio;
+        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${acumulado}`});
     }
     else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[3]}`}); }
+};
+
+export const Premio = async (req, res) => {
+    try {
+        acumulado = premiototal[0] + premiototal[1] + premiototal[2] + premiototal[3] + premiototal[4];
+        const DineroAcumulado = new Dinero({ acumulado });
+        await DineroAcumulado.save();
+        res.status(201).json({msg: 'Dinero Guardado con Exito'});
+    } catch (error) { res.status(404).json(error); }
 };
