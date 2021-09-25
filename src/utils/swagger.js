@@ -1212,7 +1212,7 @@ export const swaggerOptions = {
               }
             }
           },
-          "/tercerronda/TercerRespuesta/{id}": {
+          "/tercerronda/SegundaRespuesta/{id}": {
             "post": {
               "tags": [
                 "TercerRonda"
@@ -1457,7 +1457,7 @@ export const swaggerOptions = {
               "tags": [
                 "TercerRonda"
               ],
-              "summary": "Para guardar el dinero conseguido en la segunda ronda",
+              "summary": "Para guardar el dinero conseguido en la tercer ronda",
               "responses": {
                 "201": {
                   "description": "Created",
@@ -1892,7 +1892,7 @@ export const swaggerOptions = {
               "tags": [
                 "CuartaRonda"
               ],
-              "summary": "Para guardar el dinero conseguido en la segunda ronda",
+              "summary": "Para guardar el dinero conseguido en la cuarta ronda",
               "responses": {
                 "201": {
                   "description": "Created",
@@ -1935,7 +1935,7 @@ export const swaggerOptions = {
               }
             }
           },
-          "/quintaronda/DineroRonda1": {
+          "/quintaronda/DineroRonda4": {
             "get": {
               "tags": [
                 "QuintaRonda"
@@ -2319,6 +2319,34 @@ export const swaggerOptions = {
                     }
                   }
                 },
+              }
+            }
+          },
+          "/quintaronda/AgregarDinero": {
+            "post": {
+              "tags": [
+                "QuintaRonda"
+              ],
+              "summary": "Para guardar el dinero conseguido en la quinta ronda",
+              "responses": {
+                "201": {
+                  "description": "Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "msg": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "401": {
+                  "description": "Unauthorized",
+                }
               }
             }
           },

@@ -2,7 +2,6 @@ import Pregunta from '../models/preguntas';
 import Dinero from '../models/Dinero.model';
 
 let acumulado = 0;
-let premio=0;
 let premiototal=[];
 
 export const DineroRonda1 = async (req, res) => {
@@ -42,71 +41,76 @@ export const PreguntasRonda2 = async (req, res) => {
 };
 
 export const ResponderPregunta1 = async (req, res) => {
-    const Preguntas = await Pregunta.findById(req.params.id);
-    const opción = req.body.respuesta;
-    if (opción === Preguntas.respuesta1) {
-        let primerpremio = Preguntas.premio;
+    try {
         const dinero = await Dinero.find();
-        premio = Number(dinero[0].acumulado);
-        let premio1 = premio + primerpremio;
-        premiototal.push(premio1);
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premio1}`});
-    }
-    else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premio}`}); }
+        let premio = Number(dinero[0].acumulado);
+        const Preguntas = await Pregunta.findById(req.params.id);
+        const opción = req.body.respuesta;
+        if (opción === Preguntas.respuesta1) {
+            let primerpremio = Preguntas.premio;
+            let premio1 = premio + primerpremio;
+            premiototal.push(premio1);
+            res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premio1}`});
+        } else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premio}`}); }
+    } catch (error) { res.status(404).json(error); }
 };
 
 export const ResponderPregunta2 = async (req, res) => {
-    const Preguntas = await Pregunta.findById(req.params.id);
-    const opción = req.body.respuesta;
-    if (opción === Preguntas.respuesta2) {
-        let segundopremio = Preguntas.premio;
-        let premio2 = premiototal[0] + segundopremio;
-        premiototal.push(premio2)
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[1]}`});
-    }
-    else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[0]}`}); }
+    try {
+        const Preguntas = await Pregunta.findById(req.params.id);
+        const opción = req.body.respuesta;
+        if (opción === Preguntas.respuesta2) {
+            let segundopremio = Preguntas.premio;
+            let premio2 = premiototal[0] + segundopremio;
+            premiototal.push(premio2);
+            res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[1]}`});
+        } else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[0]}`}); }
+    } catch (error) { res.status(404).json(error); }
 };
 
 export const ResponderPregunta3 = async (req, res) => {
-    const Preguntas = await Pregunta.findById(req.params.id);
-    const opción = req.body.respuesta;
-    if (opción === Preguntas.respuesta3) {
-        let tercerpremio = Preguntas.premio;
-        let premio3 = premiototal[1] + tercerpremio;
-        premiototal.push(premio3);
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[2]}`});
-    }
-    else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[1]}`}); }
+    try {
+        const Preguntas = await Pregunta.findById(req.params.id);
+        const opción = req.body.respuesta;
+        if (opción === Preguntas.respuesta3) {
+            let tercerpremio = Preguntas.premio;
+            let premio3 = premiototal[1] + tercerpremio;
+            premiototal.push(premio3);
+            res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[2]}`});
+        } else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[1]}`}); }    
+    } catch (error) { res.status(404).json(error); }
 };
 
 export const ResponderPregunta4 = async (req, res) => {
-    const Preguntas = await Pregunta.findById(req.params.id);
-    const opción = req.body.respuesta;
-    if (opción === Preguntas.respuesta4) {
-        let cuartopremio = Preguntas.premio;
-        let premio4 = premiototal[2] + cuartopremio;
-        premiototal.push(premio4);
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[3]}`});
-    }
-    else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[2]}`}); }
+    try {
+        const Preguntas = await Pregunta.findById(req.params.id);
+        const opción = req.body.respuesta;
+        if (opción === Preguntas.respuesta4) {
+            let cuartopremio = Preguntas.premio;
+            let premio4 = premiototal[2] + cuartopremio;
+            premiototal.push(premio4);
+            res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[3]}`});
+        } else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[2]}`}); }    
+    } catch (error) { res.status(404).json(error); }
 };
 
 export const ResponderPregunta5 = async (req, res) => {
-    const Preguntas = await Pregunta.findById(req.params.id);
-    const opción = req.body.respuesta;
-    if (opción === Preguntas.respuesta4) {
-        let quintopremio = Preguntas.premio;
-        let premio5 = premiototal[3] + quintopremio;
-        premiototal.push(premio5);
-        res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[4]}`});
-    }
-    else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[3]}`}); }
+    try {
+        const Preguntas = await Pregunta.findById(req.params.id);
+        const opción = req.body.respuesta;
+        if (opción === Preguntas.respuesta4) {
+            let quintopremio = Preguntas.premio;
+            let premio5 = premiototal[3] + quintopremio;
+            premiototal.push(premio5);
+            res.status(200).json({msg: `Su respuesta es correcta, puede continuar, dinero acumulado: ${premiototal[4]}`});
+        } else {res.status(400).json({msg: `Su respuesta es incorrecta, su dinero acumulado es: ${premiototal[3]}`}); }
+    } catch (error) { res.status(404).json(error); }
 };
 
-export const Premio = async (req, res) => {
+export const PremioRonda2 = async (req, res) => {
     try {
-        acumulado = premiototal[0] + premiototal[1] + premiototal[2] + premiototal[3] + premiototal[4];;
-        console.log(acumulado);
+        acumulado = premiototal[4];
+        console.log(premiototal[4]);
         const DineroAcumulado = new Dinero({ acumulado });
         await DineroAcumulado.save();
         res.status(201).json({msg: 'Dinero Guardado con Exito'});

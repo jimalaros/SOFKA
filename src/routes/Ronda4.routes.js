@@ -18,6 +18,6 @@ router.post('/CuartaRespuesta/:id', CuartaRonda.ResponderPregunta4);
 
 router.post('/QuintaRespuesta/:id', CuartaRonda.ResponderPregunta5);
 
-router.post('/AgregarDinero', CuartaRonda.Premio);
+router.post('/AgregarDinero', CuartaRonda.PremioRonda4);
 
 export default router;
