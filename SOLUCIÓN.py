@@ -1,14 +1,13 @@
 listajugadores = [];
 listapreguntas = [];
-listapreguntasRonda1 = [];
-listapreguntasRonda2 = [];
-listapreguntasRonda3 = [];
-listapreguntasRonda4 = [];
-listapreguntasRonda5 = [];
+Historicos = [];
 premiototal = [];
+premios = [];
 
 class Juego:
-    def __init__(self, acumulado):
+    def __init__(self, jugador, ronda, acumulado):
+        self.jugador=jugador;
+        self.ronda=ronda;
         self.acumulado=acumulado;
     
     def DatosPreguntas(self):
@@ -282,16 +281,6 @@ def RegistrarPreguntas():
     premio = 500000000;
     registro = Pregunta(pregunta, respuesta1, respuesta2, respuesta3, respuesta4, categoria, premio);
     listapreguntas.append(registro);
-    
-    '''pregunta = input("Ingrese la pregunta: ");
-    respuesta1 = input("Ingrese la primera respuesta: ");
-    respuesta2 = input("Ingrese la segunda respuesta: ");
-    respuesta3 = input("Ingrese la tercer respuesta: ");
-    respuesta4 = input("Ingrese la cuarta respuesta: ");
-    categoria = int(input("Ingrese la categoria: "));
-    premio = int(input("Ingrese la bonificación de la pregunta: "));
-    registro = Juego(pregunta, respuesta1, respuesta2, respuesta3, respuesta4, categoria, premio);
-    listapreguntas.append(registro);'''
 
 def ListaPreguntas():
     print("Listado de Preguntas\n");
@@ -299,7 +288,7 @@ def ListaPreguntas():
     for registro in listapreguntas:
         if categoria == registro.categoria:
             registro.DatosPreguntas();
-
+            
 def RespuestasRonda1():
     print("Primera Ronda\n");
     respuestapregunta1 = input("Ingrese la respuesta para la primera pregunta: ");
@@ -310,6 +299,7 @@ def RespuestasRonda1():
         print("Su respuesta es correcta, el dinero acumulado es: ", premiototal[0]);
     else:
         print("Su respuesta es incorrecta, el dinero acumulado es: ", 0);
+        salir();
     
     respuestapregunta2 = input("Ingrese la respuesta para la segunda pregunta: ");
     if respuestapregunta2 == "Baby shower":
@@ -319,6 +309,7 @@ def RespuestasRonda1():
         print("Su respuesta es correcta, el dinero acumulado es: ", premiototal[1]);
     else:
         print("Su respuesta es incorrecta, el dinero acumulado es: ", premiototal[0]);
+        salir();
     
     respuestapregunta3 = input("Ingrese la respuesta para la tercer pregunta: ");
     if respuestapregunta3 == "Paga la cuenta":
@@ -328,6 +319,7 @@ def RespuestasRonda1():
         print("Su respuesta es correcta, el dinero acumulado es: ", premiototal[2]);
     else:
         print("Su respuesta es incorrecta, el dinero acumulado es: ", premiototal[1]);
+        salir();
     
     respuestapregunta4 = input("Ingrese la respuesta para la cuarta pregunta: ");
     if respuestapregunta4 == "El pasaporte":
@@ -337,6 +329,7 @@ def RespuestasRonda1():
         print("Su respuesta es correcta, el dinero acumulado es: ", premiototal[3]);
     else:
         print("Su respuesta es incorrecta, el dinero acumulado es: ", premiototal[2]);
+        salir();
     
     respuestapregunta5 = input("Ingrese la respuesta para la quinta pregunta: ");
     if respuestapregunta5 == "Whatsapp":
@@ -346,6 +339,7 @@ def RespuestasRonda1():
         print("Su respuesta es correcta, el dinero acumulado es: ", premiototal[4]);
     else:
         print("Su respuesta es incorrecta, el dinero acumulado es: ", premiototal[3]);
+        salir();
     
 def RespuestasRonda2():
     print("Segunda Ronda\n");
@@ -537,7 +531,8 @@ def RespuestasRonda5():
         
         
 def salir():
-    print("Gracias por haber jugado...!");
+    nombre=listajugadores[0].nombre;
+    print(f"Gracias por haber jugado {nombre}...!");
     exit();
     
 def main():
@@ -549,16 +544,16 @@ def main():
         print("|****************************|")
         print("")
         print("Seleccione una de las siguientes opciones:");
-        print("1.- Registrar Jugador")
-        print("2.- Mostrar Jugador")
-        print("3.- Buscar Jugador")
-        print("4.- Registrar Preguntas")
-        print("5.- Listado de preguntas x categoria")
-        print("6.- Contestar Preguntas Ronda 1")
-        print("7.- Contestar Preguntas Ronda 2")
-        print("8.- Contestar Preguntas Ronda 3")
-        print("9.- Contestar Preguntas Ronda 4")
-        print("10.- Contestar Preguntas Ronda 5")
+        print("1.- Registrar Jugador");
+        print("2.- Mostrar Jugador");
+        print("3.- Buscar Jugador");
+        print("4.- Registrar Preguntas");
+        print("5.- Listado de preguntas x categoria");
+        print("6.- Contestar Preguntas Ronda 1");
+        print("7.- Contestar Preguntas Ronda 2");
+        print("8.- Contestar Preguntas Ronda 3");
+        print("9.- Contestar Preguntas Ronda 4");
+        print("10.- Contestar Preguntas Ronda 5");
         print("11.- Salir\n")
         
         opcion = int(input("Opcion: "))
