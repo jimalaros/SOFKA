@@ -37,6 +37,10 @@ export const swaggerOptions = {
           {
             "name": "QuintaRonda",
             "description": "Preguntas de dificultad 5"
+          },
+          {
+            "name": "Historial",
+            "description": "Historial de juego"
           }
         ],
         "paths": {
@@ -57,7 +61,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -123,7 +127,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -191,7 +195,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -201,6 +205,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para ver y responder todas las preguntas de categoria 1",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -211,7 +216,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -221,6 +226,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para crear preguntas categoria 1",
+              "security": [],
               "requestBody": {
                 "content": {
                   "application/json": {
@@ -276,9 +282,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -288,6 +291,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para responder a la primera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -348,6 +352,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para responder a la segunda pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -408,6 +413,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para responder a la tercera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -468,6 +474,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para responder a la cuarta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -528,6 +535,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para responder a la quinta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -588,6 +596,7 @@ export const swaggerOptions = {
                 "PrimeraRonda"
               ],
               "summary": "Para guardar el dinero conseguido en la primera ronda",
+              "security": [],
               "responses": {
                 "201": {
                   "description": "Created",
@@ -604,9 +613,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -616,6 +622,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para ver y responder todas las preguntas de categoria 2",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -626,7 +633,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -636,6 +643,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -646,7 +654,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -656,6 +664,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para crear preguntas categoria 2",
+              "security": [],
               "requestBody": {
                 "content": {
                   "application/json": {
@@ -711,9 +720,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -723,6 +729,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para responder a la primera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -783,6 +790,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para responder a la segunda pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -843,6 +851,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para responder a la tercera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -903,6 +912,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para responder a la cuarta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -963,6 +973,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para responder a la quinta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1023,6 +1034,7 @@ export const swaggerOptions = {
                 "SegundaRonda"
               ],
               "summary": "Para guardar el dinero conseguido en la segunda ronda",
+              "security": [],
               "responses": {
                 "201": {
                   "description": "Created",
@@ -1039,9 +1051,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -1051,6 +1060,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para ver y responder todas las preguntas de categoria 3",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -1071,6 +1081,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -1081,7 +1092,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -1091,6 +1102,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para crear preguntas categoria 3",
+              "security": [],
               "requestBody": {
                 "content": {
                   "application/json": {
@@ -1146,9 +1158,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -1158,6 +1167,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para responder a la primera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1218,6 +1228,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para responder a la segunda pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1278,6 +1289,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para responder a la tercera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1338,6 +1350,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para responder a la cuarta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1398,6 +1411,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para responder a la quinta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1458,6 +1472,7 @@ export const swaggerOptions = {
                 "TercerRonda"
               ],
               "summary": "Para guardar el dinero conseguido en la tercer ronda",
+              "security": [],
               "responses": {
                 "201": {
                   "description": "Created",
@@ -1474,9 +1489,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -1486,6 +1498,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para ver y responder todas las preguntas de categoria 4",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -1496,7 +1509,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -1506,6 +1519,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -1516,7 +1530,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -1526,6 +1540,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para crear preguntas categoria 4",
+              "security": [],
               "requestBody": {
                 "content": {
                   "application/json": {
@@ -1581,9 +1596,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -1593,6 +1605,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para responder a la primera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1653,6 +1666,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para responder a la segunda pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1713,6 +1727,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para responder a la tercera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1773,6 +1788,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para responder a la cuarta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1833,6 +1849,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para responder a la quinta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -1893,6 +1910,7 @@ export const swaggerOptions = {
                 "CuartaRonda"
               ],
               "summary": "Para guardar el dinero conseguido en la cuarta ronda",
+              "security": [],
               "responses": {
                 "201": {
                   "description": "Created",
@@ -1909,9 +1927,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -1921,6 +1936,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para ver y responder todas las preguntas de categoria 5",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -1931,7 +1947,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -1941,6 +1957,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para ver el dinero acumulado de la ronda anterior",
+              "security": [],
               "responses": {
                 "200": {
                   "description": "Ok",
@@ -1951,7 +1968,7 @@ export const swaggerOptions = {
                       }
                     }
                   }
-                }
+                },
               }
             }
           },
@@ -1961,6 +1978,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para crear preguntas categoria 5",
+              "security": [],
               "requestBody": {
                 "content": {
                   "application/json": {
@@ -2016,9 +2034,6 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
-                }
               }
             }
           },
@@ -2028,6 +2043,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para responder a la primera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -2088,6 +2104,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para responder a la segunda pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -2148,6 +2165,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para responder a la tercera pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -2208,6 +2226,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para responder a la cuarta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -2268,6 +2287,7 @@ export const swaggerOptions = {
                 "QuintaRonda"
               ],
               "summary": "Para responder a la quinta pregunta",
+              "security": [],
               "parameters": [
                 {
                   "in": "path",
@@ -2344,9 +2364,54 @@ export const swaggerOptions = {
                     }
                   }
                 },
-                "401": {
-                  "description": "Unauthorized",
+              }
+            }
+          },
+          "/historial": {
+            "get": {
+              "tags": [
+                "Historial"
+              ],
+              "summary": "Todos los usuarios del sistema",
+              "description": "Todos los usuarios registrados en el sistema",
+              "security": [],
+              "responses": {
+                "200": {
+                  "description": "Ok",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/Historial"
+                      }
+                    }
+                  }
                 }
+              }
+            }
+          },
+          "/historial/CrearHistorial": {
+            "post": {
+              "tags": [
+                "Historial"
+              ],
+              "summary": "Para crear el historial",
+              "security": [],
+              "responses": {
+                "201": {
+                  "description": "Created",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "type": "object",
+                        "properties": {
+                          "msg": {
+                            "type": "string",
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
               }
             }
           },
@@ -2464,8 +2529,8 @@ export const swaggerOptions = {
                 "respuesta": {
                   "type": "string",
                   "example": "Whatsapp"
-                },
-              },
+                }
+              }
             },
             "Dinero": {
               "type": "object",
@@ -2473,12 +2538,34 @@ export const swaggerOptions = {
                 "acumulado"
               ],
               "properties": {
-                "respuesta": {
+                "acumulado": {
                   "type": "number",
                   "example": 250000
-                },
-              },
+                }
+              }
             },
+            "Historial": {
+              "type": "object",
+              "required": [
+                "usuario",
+                "telefono",
+                "dinero"
+              ],
+              "properties": {
+                "usuario": {
+                  "type": "string",
+                  "example": "Alex"
+                },
+                "telefono": {
+                  "type": "string",
+                  "example": "3200000"
+                },
+                "dinero": {
+                  "type": "number",
+                  "example": 1000000
+                }
+              }
+            }
           }
         }
       },

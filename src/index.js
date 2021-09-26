@@ -8,6 +8,7 @@ import Ronda2 from './routes/Ronda2.routes';
 import Ronda3 from './routes/Ronda3.routes';
 import Ronda4 from './routes/Ronda4.routes';
 import Ronda5 from './routes/Ronda5.routes';
+import Historial from './routes/Historial.routes';
 import * as options from './utils/swagger';
 
 const swaggerSpecs = swaggerJSDoc(options.swaggerOptions);
@@ -23,6 +24,7 @@ app.use('/segundaronda', Ronda2);
 app.use('/tercerronda', Ronda3);
 app.use('/cuartaronda', Ronda4);
 app.use('/quintaronda', Ronda5);
+app.use('/historial', Historial);
 
 app.listen(app.get('puerto'), () => {
     console.log('Escuchando en el puerto ', app.get('puerto'));
