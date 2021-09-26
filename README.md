@@ -54,10 +54,15 @@ _Para crear un usuario tendrás que llenar todos los datos de este esquema en el
     "apellido": "A",
     "correo": "j@gmail.com",
     "telefono": 321850,
-    "direccion": "Calle 15 # 22-02",
     "contraseña": "2222"
 }
 ```
+
+_En la ruta Login que encontrarás debajo de la ruta de registro, llenas el body y obtienes un token, ese token tendrás que usarlo en la parte superior de swagger, donde dice "Authorize", con ingresar el token crearás el esqueleto del historial.
+
+10. Cada ronda tendrá 5 preguntas, para verlas tendrás que ejecutar la operación get que encontrarás en cada ronda, para responder las preguntas tendrás que llenar el body que encontrarás en la operación post de cada ronda.
+
+11. Para operar el archivo de python adjunto en este repositorio, te registras haciendo uso de la opción 1 del menú, si quieres ver el o los usuarios registrados, tendrás la opción 2, es obligatorio antes de responder o ver las preguntas crearlas, para esto solo tienes que correr la opción 4, para responder, de la opción 6 en adelante.
 
 
 |       correo               |       Nombre      |
@@ -70,6 +75,8 @@ _Para crear un usuario tendrás que llenar todos los datos de este esquema en el
 * Express
 * Swagger
 * JWT
+* Python
+* JavaScript
 
 ## Autores ✒️
 
